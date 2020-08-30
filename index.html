@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - ToDoList</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1 class="title">每日報告EXCEL產生器</h1>
+<div id="app">
+  <div class="top">
+    <input v-model="AddStr" @keyup.enter="Add()" placeholder="Add new work..."/>
+    <button class="add" @click="Add()">Add</button>
+    <button class="clear" @click="clear()">clear all</button>
+    <div class="" style=" text-align: center;border: none;margin: 5% 0;" >
+      <button @click='tableToExcel'>匯出成EXCEL</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <ul class="list-group" v-for="(item,index) in ListArray">
+      <div class="list_group">
+        <li class="list-group-item" :title="'建立時間 '+item.time">{{item.title}}</li><i class="fas fa-trash-alt" @click="del(index)"></i>
+      </div>
+    </ul>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='./vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
